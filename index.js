@@ -56,6 +56,15 @@ colorPicker.addEventListener('blur', function() {
   colorIcon.classList.remove('color-picker-active');
 });
 
+document.querySelectorAll('.nav-menu a, .navbar a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('checkbox').checked = false;
+  });
+});
+
+document.documentElement.style.scrollBehavior = "smooth";
+
+
 
 
 
