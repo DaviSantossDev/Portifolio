@@ -5,8 +5,8 @@ $numero = isset($_POST['numero']) ? addslashes($_POST['numero']) : '';
 $texto = isset($_POST['texto']) ? addslashes($_POST['texto']) : '';
 $mensagem = isset($_POST['textarea']) ? addslashes($_POST['textarea']) : '';
 
-$para = "davisantoss.dev@gmail.com";  // Endereço de e-mail para onde você quer enviar os dados
-$assunto = "📩 Coleta de Dados - Portfólio";  // Assunto do e-mail
+$para = "davisantoss.dev@gmail.com";
+$assunto = "📩 Coleta de Dados - Portfólio";
 
 $corpo = "
 <strong>Nome:</strong> $nome <br>
@@ -16,17 +16,11 @@ $corpo = "
 <strong>Mensagem:</strong> $mensagem
 ";
 
-// Cabeçalho do e-mail, incluindo tipo de conteúdo HTML
 $cabeca = "MIME-Version: 1.0" . "\r\n";
 $cabeca .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$cabeca .= "From: $email" . "\r\n";  // E-mail do remetente
-$cabeca .= "Reply-To: $email" . "\r\n";  // E-mail para onde as respostas irão
-$cabeca .= "X-Mailer: PHP/" . phpversion();  // Identificação do servidor de e-mail
+$cabeca .= "From: $email" . "\r\n";
+$cabeca .= "Reply-To: $email" . "\r\n";
+$cabeca .= "X-Mailer: PHP/" . phpversion();
 
-// Enviando o e-mail
-if(mail($para, $assunto, $corpo, $cabeca)) {
-    echo "Mensagem enviada com sucesso!";
-} else {
-    echo "Erro ao enviar a mensagem.";
-}
+
 ?>
